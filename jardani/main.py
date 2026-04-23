@@ -26,7 +26,7 @@ load_dotenv()
 
 secret_token = os.getenv("DISCORD_TOKEN")
 
-cogs = ["ping", "lock", "about", "ai"]
+cogs = ["ping", "lock", "about", "ai", "self_timeout"]
 
 
 async def load_cogs():
@@ -45,6 +45,12 @@ async def on_ready() -> None:
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} commands")
+
+        guild = bot.get_guild(1487891707076018248)
+
+        if guild:
+            await guild.leave()
+
     except Exception as e:
         print(f"Failed to sync slash commands because of - {e}")
 
