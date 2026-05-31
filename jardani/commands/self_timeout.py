@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+# SPDX-License-Identifier: 	GPL-3.0-or-later
 from discord import app_commands, Interaction
 from discord.ext import commands
 from datetime import timedelta
